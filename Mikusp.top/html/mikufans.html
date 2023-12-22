@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikufans - 天下漫友是一家</title>
+    <link rel="icon" href="../images/favicon.ico" type ="image/x-icon">
+    <link rel="stylesheet" href="../css/mikusp-top.css">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="description" content="Mikufans（www.mikusp.top)，这里有动漫新番，ACG氛围，可以在这里找到许多欢乐~">
+    <meta name="keywords" content="Mikufans,mikufans,二次元,ACG,galgame,动画,初音,初音未来,洛天依,vocaloid">
+</head>
+<body>
+        <div class="start"><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./mikufans.html" style="color: green;">Mikufans&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><a href="./mikufans.html" class="index">主站</a>&nbsp;&nbsp;&nbsp;
+            <a href="./mikufans.html" class="a-left">番剧</a>&nbsp;&nbsp;&nbsp;
+            <a href="./mikufans.html" class="a-left">直播</a>&nbsp;&nbsp;&nbsp;
+            <a href="./mikufans.html" class="a-left">漫画</a>&nbsp;&nbsp;&nbsp;
+            <a href="../space/space all.html" class="a-left">用户</a>&nbsp;&nbsp;&nbsp;
+            <a href="./mikufans.html" class="a-left">官方群聊</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="./login.html" class="a-login">注册&登录</a>
+            <h3>
+              <div id="dateTime" style="color: mediumblue;text-align: center;background-color: gray;"></div>
+            </h3>
+        </div><br>
+  <div id="container">
+    <ul class="parent" style="left: 0;">
+      <li><a href="../html/Mikufans拜年祭/Bainianji.html" target="_blank"><img src="..//images/Mikufans网站2024拜年祭封面.jpg"></a></li>
+    </ul>
+  
+    <div class="btnLeft">&lt;</div>
+    <div class="btnRight">&gt;</div>
+    <div class="modal">
+      新的消息：）
+    </div>
+      <div class="dots">
+        <ul class="clearfix">
+          <li class="on"></li>
+          <li class="off"></li>
+          <li class="off"></li>
+          <li class="off"></li>
+          <li class="off"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    
+  var imgShow = document.getElementsByClassName('parent')[0],
+    dotList = document.querySelectorAll('.dots >.clearfix > li');
+  var btnLeft = document.getElementsByClassName('btnLeft')[0],
+      btnRight = document.getElementsByClassName('btnRight')[0];
+  var dotLen = dotList.length,
+    index = 0; //轮播层的图片索引，0表示第一张
+  
+  //圆点显示
+  function showRadius() {
+    for(var i = 0; i < dotLen; i++) {
+      if(dotList[i].className === "on"){
+        dotList[i].className = "off";
+      }
+    }
+    dotList[index].className = "on";
+  }
+  
+  //向左移动
+  btnLeft.onclick = function() {
+    index--;
+      if(index < 0){  /*第1张向左时，变为第5张*/
+          index = 4;
+      }
+      showRadius();
+    var left;
+    var imgLeft = imgShow.style.left;
+    if(imgLeft === "0px") { /*当是第1张时，每张图片左移，移4张图，位置为-(4*500)*/
+      left = -2000;
+    }
+    else{
+      left = parseInt(imgLeft) + 500; /*由于left为负数，每左移一张加500*/
+    }
+    imgShow.style.left = left + "px";
+  }
+  
+  //向右移动
+  btnRight.onclick = function() {
+    index++;
+      if(index > 4){  /*第5张向右时，变为第1张*/
+          index = 0;
+      }
+      showRadius();
+    var right;
+    var imgLeft = imgShow.style.left;
+    if(imgLeft === "-2000px") { /*当是第5张时，第1张的位置为0*/
+      right = 0;
+    }
+    else{
+      right = parseInt(imgLeft) - 500; /*由于left为负数，每右移一张减500*/
+    }
+    imgShow.style.left = right + "px";
+  }
+  
+  // 自动轮播
+  /*var timer;
+  function autoPlay() {
+    timer = setInterval(function() {
+      var right;
+      var imgLeft = imgShow.style.left;
+      if(imgLeft === "-2000px") {
+        right = 0;
+      }
+      else{
+        right = parseInt(imgLeft) - 500;
+      }
+      imgShow.style.left = right + "px";
+    } ,1000)
+  }
+  autoPlay();*/
+  
+  for(var i = 0; i < dotLen; i++) {
+      /*利用闭包传递索引*/
+      (function(i) {
+          dotList[i].onclick = function() {
+            var dis = index - i; //当前位置和点击的距离
+            imgShow.style.left = (parseInt(imgShow.style.left) + dis * 500) + "px";
+            index = i; //显示当前位置的圆点
+            showRadius();
+        }
+      })(i);
+  }
+  
+  </script><br>
+        <div class="first-report-section">
+            <div class="f-left-wrapper f-other-2">
+              <div class="f-left-header">
+                <div
+                  class="fab fa-centercode"
+                  style="color: #9796ed; font-size: 25px; margin-right: 10px"
+                ></div>
+                <div style="font-size: 20px; margin-right: 20px">&nbsp;&nbsp;&nbsp;最新の视频</div>
+              </div>
+              <div class="f-left-content other-1">
+                <div>
+                  <img src="../images/mf1.webp" alt="">
+                  <a href="../videos/b/MF1.html" target="_blank"><p style="line-height: 20px;padding: 0px 20px 0px 0px;width: 120%;margin: 0px auto;text-overflow: ellipsis">
+                    初音ミク「世界第一的公主殿下」<br>「ワールドイズマイン」
+                  </p></a>
+                  <em class="bott-1">
+                    <i
+                      class="fa fa-video"
+                      style="color: white; margin-right: 5px"
+                    ></i>
+                    <span style="margin-right: 15px">43.5万</span>
+                    <span>11.1万</span>
+                    <i style="margin-left: 24px">05:01</i>
+                  </em>
+                  <span class="up" style="color: #999999; margin-top: 15px">UP主：</span
+                  >MCHappyFriskYo
+                </div><div>
+                  <img src="../images/mf2.webp" alt="">
+                  <a href="../videos/b/MF2.html" target="_blank"><p style="line-height: 20px;padding: 0px 20px 0px 0px;width: 120%;margin: 0px auto;text-overflow: ellipsis">
+                    【炮姐/AMV】我永远都会守护在<br>你的身边！
+                  </p></a>
+                  <em class="bott-1">
+                    <i
+                      class="fa fa-video"
+                      style="color: white; margin-right: 5px"
+                    ></i>
+                    <span style="margin-right: 15px">52.5万</span>
+                    <span>15.1万</span>
+                    <i style="margin-left: 24px">05:23</i>
+                  </em>
+                  <span class="up" style="color: #999999; margin-top: 15px">UP主：</span
+                  >MCHappyFriskYo
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+<div class="timeshow" id="time">
+<script>
+                  Date.prototype.format = function (fmt) {
+                      var o = {
+                          "y+": this.getFullYear, //年
+                          "M+": this.getMonth() + 1, //月份
+                          "d+": this.getDate(), //日
+                          "h+": this.getHours(), //小时
+                          "m+": this.getMinutes(), //分
+                          "s+": this.getSeconds() //秒
+                      };
+                      if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+                      for (var k in o)
+                          if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                      return fmt;
+                  }
+                  setInterval("document.getElementById('dateTime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikufans - Login and Register</title>
+    <link rel="stylesheet" href="../css/lgstyle.css">
+</head>
+
+<body>
+    <div class="start"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./mikufans.html" class="index">主站</a>&nbsp;&nbsp;&nbsp;
+        <a href="./mikufans.html" class="a-left">番剧</a>&nbsp;&nbsp;&nbsp;
+        <a href="./mikufans.html" class="a-left">直播</a>&nbsp;&nbsp;&nbsp;
+        <a href="./mikufans.html" class="a-left">漫画</a>&nbsp;&nbsp;&nbsp;
+        <a href="./mikufans.html" class="a-left">官方群聊</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="./login.html" class="a-login">注册&登录</a>
+    </div><br><br>
+    <h2>Login</h2>
+    <form id="loginForm">
+        Username: <input type="text" id="loginUsername" required><br>
+        Password: <input type="password" id="loginPassword" required><br>
+        <button type="button" onclick="login()">Login</button>
+    </form>
+
+    <h2>Register</h2>
+    <form id="registerForm">
+        Username: <input type="text" id="registerUsername" required><br>
+        Password: <input type="password" id="registerPassword" required><br>
+        <button type="button" onclick="register()">Register</button>
+    </form>
+
+    <script src="../js/lgscript.js"></script>
+</body>
+
+</html>
